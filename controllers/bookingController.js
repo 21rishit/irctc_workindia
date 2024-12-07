@@ -5,9 +5,9 @@ Implemented row-level locking and transactions to ensure only one user can reser
 When multiple users attempt concurrent bookings, the system ensures only one user succeeds while others are informed about unavailability.
 */
 
-const db = require("../Config/database");
-const Train = require("../models/train");
-const Booking = require("../models/booking");
+const db =require("../Config/database");
+const Train =require("../models/train");
+const Booking =require("../models/booking");
 
 exports.reserveSeat = async (req, res, next) => {
   const dbConnection = await db.getConnection();

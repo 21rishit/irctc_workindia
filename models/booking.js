@@ -6,7 +6,7 @@ const Booking = function (data) {
   this.seatCount = data.seatCount;
 };
 
-// Create a new booking entry in the database
+// Created a new booking entry in the database
 Booking.add = async (bookingDetails) => {
   const sqlQuery =
     "INSERT INTO bookings (train_id, user_id, seat_count) VALUES (?, ?, ?)";
@@ -31,7 +31,7 @@ Booking.fetchByUserAndTrain = async (userId, trainId) => {
   try {
     const [results] = await db.query(sqlQuery, [userId, trainId]);
     return results[0] || null;
-  } catch (error) {
+  }catch(error) {
     throw error;
   }
 };

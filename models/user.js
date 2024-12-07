@@ -2,9 +2,9 @@ const db = require("../Config/database");
 
 const User = function (data) {
   this.name = data.name;
-  this.email = data.email;
+  this.email =data.email;
   this.password = data.password;
-  this.role = data.role || "user"; // Default role is 'user' if not provided
+  this.role = data.role || "user"; // Default role is 'user'
 };
 
 // Register a new user in the database

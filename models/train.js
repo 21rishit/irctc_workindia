@@ -1,6 +1,6 @@
 const db = require("../Config/database");
 
-const Train = function (data) {
+const Train =function (data) {
   this.name = data.name;
   this.source = data.source;
   this.destination = data.destination;
@@ -52,13 +52,13 @@ Train.modifySeatAvailability = async (trainId, seatsRemaining) => {
   }
 };
 
-// Find a train by its unique ID
+// Find train by its unique ID
 Train.getTrainById = async (trainId) => {
   const sqlQuery = "SELECT * FROM trains WHERE id = ?";
 
   try {
     const [trainData] = await db.query(sqlQuery, [trainId]);
-    return trainData[0] || null; // Return null if no train is found
+    return trainData[0] || null; // Return null in case no train is found
   } catch (error) {
     throw error;
   }

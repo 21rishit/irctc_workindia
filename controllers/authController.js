@@ -6,7 +6,7 @@ require("dotenv").config();
 // Function to handle user registration
 exports.registerUser = async (req, res, next) => {
   try {
-    const { name, email, password, role } = req.body;
+    const {name,email,password,role } = req.body;
 
     // Validate if user already exists in the system
     const existingAccount = await User.findByEmail(email);

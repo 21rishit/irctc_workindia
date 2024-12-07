@@ -9,7 +9,7 @@ CREATE TABLE users (
   role ENUM('admin', 'user') NOT NULL DEFAULT 'user'
 );
 
-CREATE TABLE trains (
+CREATE TABLE trains(
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   source VARCHAR(255) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE trains (
   available_seats INT NOT NULL
 );
 
-CREATE TABLE bookings (
+CREATE TABLE bookings(
   id INT AUTO_INCREMENT PRIMARY KEY,
   train_id INT NOT NULL,
   user_id INT NOT NULL,

@@ -27,13 +27,13 @@ exports.reserveSeats = async (req, res, next) => {
     }
 
     // Ensure sufficient seat availability
-    if (trainData[0].available_seats < seatCount) {
+    if(trainData[0].available_seats < seatCount) {
       await connection.rollback();
       return res.status(400).json({ error: "Not enough seats available." });
     }
 
     // Record the booking
-    const bookingDetails = new Booking({
+    const bookingDetails =new Booking({
       trainId,
       userId,
       seatCount,

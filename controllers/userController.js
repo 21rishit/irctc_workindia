@@ -6,7 +6,7 @@ exports.fetchUserDetails = async (req, res, next) => {
 
     // Retrieve the user record based on ID
     const userRecord = await User.findById(currentUserId);
-    if (!userRecord) {
+    if(!userRecord) {
       return res.status(404).json({ message: "User not found." });
     }
 
